@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -29,8 +28,8 @@ public class StudentController {
 
     }
     @GetMapping
-    public String getAllStudent(){
-        return "huis";
+    public ResponseEntity<List<Student>> getAllStudent(){
+        return ResponseEntity.ok(studentService.getAllStudent());
     }
     public void getStudentByName(){
 
