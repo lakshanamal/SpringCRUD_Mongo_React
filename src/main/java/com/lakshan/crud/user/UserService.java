@@ -1,9 +1,10 @@
 package com.lakshan.crud.user;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UserService {
     private final UserRepository userRepository;
@@ -18,5 +19,9 @@ public class UserService {
 
     public void saveStudent(User user){
         userRepository.save(user);
+    }
+
+    public User getUserById(String id) {
+            return userRepository.findById(id).get();
     }
 }

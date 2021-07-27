@@ -3,7 +3,7 @@ package com.lakshan.crud.user;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document("users")
+@Document("users")  // only for mongo if mysql @Entity
 public class User {
 
 
