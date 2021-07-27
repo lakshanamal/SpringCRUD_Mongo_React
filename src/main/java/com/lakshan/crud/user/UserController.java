@@ -27,8 +27,13 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
     @PostMapping
-    public ResponseEntity saveStudent(@RequestBody User user){
+    public ResponseEntity saveUser(@RequestBody User user){
         userService.saveStudent(user);
         return ResponseEntity.status(HttpStatus.CREATED).build();
+    }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable String id){
+        userService.deleteUser(id);
+        return ResponseEntity.ok("User delete successfully");
     }
 }
