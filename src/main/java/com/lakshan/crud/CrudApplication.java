@@ -12,7 +12,6 @@ public class CrudApplication implements Runnable {
         t1.start();
     }
 
-
     public void run() {
         System.out.println("Thread is running");
 
