@@ -28,7 +28,7 @@ export default function UserTable() {
 
   useEffect(() => {
     allUsers();
-  }, []);
+  }, [setUsers]);
 
   return (
     <TableContainer component={Paper}>
