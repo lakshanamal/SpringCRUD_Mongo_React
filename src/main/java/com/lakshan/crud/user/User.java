@@ -1,21 +1,37 @@
 package com.lakshan.crud.user;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("users")
 public class User {
+
+
+    @Id
+    private String id;
     private String name;
-    private int age;
+    private String age;
 
     public User() {
-
     }
 
-    public User(String name, int age) {
+    public User(String id, String name, String age) {
+        this.id = id;
         this.name = name;
         this.age = age;
     }
 
+    public User(String name, String age) {
+        this.name = name;
+        this.age = age;
+    }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
     public String getName() {
         return name;
     }
@@ -24,11 +40,11 @@ public class User {
         this.name = name;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 }
