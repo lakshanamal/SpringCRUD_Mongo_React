@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import Nav from "./Components/Nav";
-import SideBar from "./Components/SideBar/SideBar";
+import UserTable from "./Components/UserTable";
 
 export default class Home extends Component {
   render() {
     return (
-      <div>
+      <div className="home">
         <Nav />
-        <SideBar />
+        <div className="container mt-4">
+          <UserTable />
+        </div>
       </div>
     );
   }
