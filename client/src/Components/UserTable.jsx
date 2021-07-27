@@ -26,6 +26,13 @@ export default function UserTable() {
     });
   };
 
+  const deleteUser = (id) => {
+    axios.delete(`http://localhost:8080/api/user/${id}`).then((res) => {
+      alert("Delete succussful");
+      window.location.href = "/";
+    });
+  };
+
   useEffect(() => {
     allUsers();
   }, [setUsers]);
@@ -45,7 +52,7 @@ export default function UserTable() {
         </TableHead>
         <TableBody>
           {users.map((row) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.id}>
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
@@ -54,13 +61,15 @@ export default function UserTable() {
               <TableCell align="right">{row.dob}</TableCell>
               <TableCell align="right">{row.role}</TableCell>
               <TableCell align="right">
-                <Edit />
+                <Edit idName={row.id} />
+                {console.log(row.id)}
                 <Button
                   style={{ marginLeft: 20 }}
                   variant="contained"
                   color="secondary"
                   className={classes.button}
                   // startIcon={}
+                  onClick={() => deleteUser(row.id)}
                 >
                   Delete
                 </Button>

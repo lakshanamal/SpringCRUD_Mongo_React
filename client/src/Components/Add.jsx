@@ -16,6 +16,7 @@ export default function Add() {
   const onsubmit = (e) => {
     e.preventDefault();
     const user = {
+      id: Math.random,
       name: name,
       age: age,
       phone: phone,
@@ -24,7 +25,6 @@ export default function Add() {
     };
     console.log(user);
     axios.post("http://localhost:8080/api/user", user);
-    // handleClose();
     window.location.href = "/";
   };
 
