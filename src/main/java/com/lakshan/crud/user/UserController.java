@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/api/user")
+@CrossOrigin
 public class UserController {
     private final UserService userService;
 
@@ -17,7 +18,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/**")
     public ResponseEntity<List<User>> getAllUser(){
         return ResponseEntity.ok(userService.getUsers());
     }

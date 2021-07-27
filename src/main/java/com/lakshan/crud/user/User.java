@@ -11,20 +11,20 @@ public class User {
     private String id;
     private String name;
     private String age;
+    private String phone;
+    private String DOB;
+    private String role;
 
-    public User() {
-    }
-
-    public User(String id, String name, String age) {
+    public User(String id, String name, String age,String phone,String DOB,String role) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.phone=phone;
+        this.DOB=DOB;
+        this.role=role;
     }
 
-    public User(String name, String age) {
-        this.name = name;
-        this.age = age;
-    }
+
     public String getId() {
         return id;
     }
@@ -46,5 +46,29 @@ public class User {
 
     public void setAge(String age) {
         this.age = age;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDOB() {
+        return DOB;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getRole() {
+        return role;
     }
 }

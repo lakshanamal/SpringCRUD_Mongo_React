@@ -21,8 +21,8 @@ export default function UserTable() {
 
   const allUsers = async () => {
     axios.get("http://localhost:8080/api/user").then((response) => {
-      setUsers(response);
-      console.log(response);
+      setUsers(response.data);
+      console.log(response.data);
     });
   };
 
@@ -49,10 +49,10 @@ export default function UserTable() {
               <TableCell component="th" scope="row">
                 {row.name}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.age}</TableCell>
+              <TableCell align="right">{row.phone}</TableCell>
+              <TableCell align="right">{row.dob}</TableCell>
+              <TableCell align="right">{row.role}</TableCell>
               <TableCell align="right">
                 <Edit />
                 <Button
